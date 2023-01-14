@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 // This values are the props in the UI
 const style = { layout: "vertical" };
@@ -18,7 +18,7 @@ const PaypalCheckoutButton = ({ currency, amount, showSpinner }) => {
         currency: currency,
       },
     });
-  }, [currency, showSpinner]);
+  }, [currency, dispatch, options, showSpinner]);
 
 
 
