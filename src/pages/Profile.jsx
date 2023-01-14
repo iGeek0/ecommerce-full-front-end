@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProfile, registerService } from '../services/Auth.service';
+import { getProfile } from '../services/Auth.service';
 
 function Profile() {
 

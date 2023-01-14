@@ -19,6 +19,16 @@ const getProfile = async () => {
     return response.data;
 };
 
+const verifyingTokenService = async () => {
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_TOKEN)}` }
+    };
+    const response = await axios.get(`${URL_ROOT}/auth/verify`, config);
+    return response.data;
+};
 
-export { loginService, registerService, getProfile };
+
+
+
+export { loginService, registerService, getProfile, verifyingTokenService };
 

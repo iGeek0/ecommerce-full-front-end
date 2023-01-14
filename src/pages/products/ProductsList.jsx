@@ -1,13 +1,15 @@
 import Hero from "../../components/Hero";
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { getProducts } from "../../services/Product.service";
+import  UserContext  from "../../context/User.context";
 
 
 
 
 
 const ProductList = () => {
+    const { verifyingToken } = useContext(UserContext);
     const [products, setProducts] = useState([]);
     useEffect(() => {
         document.title = 'Productos';
@@ -15,6 +17,9 @@ const ProductList = () => {
             setProducts(res.data);
         });
     }, []);
+    useEffect(() => {
+        verifyingToken();
+    }, [verifyingToken]);
 
     return (
         <main>

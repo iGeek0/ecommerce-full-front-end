@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <main>
             <Hero />
-            <h1>Aqui va ir el contenido del home</h1>
+            <h1 style={{textAlign: "center"}}>Bienvenido a la pagina principla de CAFE MEXICANO!!</h1>
         </main>
     );
 }
