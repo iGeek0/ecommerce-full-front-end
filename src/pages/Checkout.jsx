@@ -73,7 +73,7 @@ const Checkout = () => {
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Resumen de compra</h5>
-                            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <p className="card-text">Tenemos envios gratuitos, aprovecha y compra nuestros productos.</p>
                             <div className="row">
                                 <div className="col-md-6">
                                     <p>Subtotal <b> {total} USD</b></p>

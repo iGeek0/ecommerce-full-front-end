@@ -1,15 +1,14 @@
 import Hero from "../../components/Hero";
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { getProducts } from "../../services/Product.service";
-import UserContext from "../../context/User.context";
 
 
 
 
 
 const ProductList = () => {
-    const { verifyingToken } = useContext(UserContext);
+
     const [products, setProducts] = useState([]);
     useEffect(() => {
         document.title = 'Productos';
@@ -17,9 +16,7 @@ const ProductList = () => {
             setProducts(res.data);
         });
     }, []);
-    useEffect(() => {
-        verifyingToken();
-    }, [verifyingToken]);
+
 
     let addProductToCart = (product) => {
         console.log("El producto es: ", product);
@@ -74,7 +71,7 @@ const ProductList = () => {
                                                 <h4 className='card-title'>{product.name}</h4>
                                                 <p className="card-text">{product.description}</p>
 
-                                                <div class="d-grid gap-2">
+                                                <div className="d-grid gap-2">
                                                     <button type="button" className="btn btn-primary btn-sm" onClick={() => addProductToCart(product)}>Agregar al carrito</button>
                                                     <Link to={`/detail-product/${product._id}`} className="btn btn-warning btn-sm">Detalle</Link>
                                                 </div>

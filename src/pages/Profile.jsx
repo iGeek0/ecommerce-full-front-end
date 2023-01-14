@@ -48,7 +48,7 @@ function Profile() {
                     <label htmlFor="password" className="form-label form-label-lg">Password</label>
                     <input type="password" className="form-control form-control-lg" id="password" onChange={handleInputChange} value={formulario.password} name="password" />
                 </div>
-                <div class="d-grid">
+                <div className="d-grid">
                     <button className="btn btn-primary" type="submit">Guardar</button>
                 </div>
             </form>
